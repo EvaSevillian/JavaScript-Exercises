@@ -5,7 +5,12 @@ let num = prompt ('Enter your age:');
 const minimumAge = 18;
 
 //Setting your current age
-let myAge = 15;
+let myAge = 17;
 
-if (minimumAge >= 18) {
-    console.log('You are old enough to drive!')};
+if (myAge >= 18) {
+    console.log('You are old enough to drive!');
+} else {
+    console.log("You are NOT old enough to drive")
+    let minimumAge = 18 - myAge;
+    console.log(minimumAge)
+}
