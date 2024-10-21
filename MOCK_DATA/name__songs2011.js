@@ -1002,27 +1002,27 @@ const data = [{"song_title":"Mr","artist_name":"Reinaldos Stoppe","genre":"Elect
 
 
 
-    
+    //2. SACAR NOMBRE CANCIONES PUBLICADAS EN 2011 (release_date)
+
+
 // Array vacío para almacenar las canciones publicadas en 2011
 let releasedSongsin2011 = [];
 
-for (let posicion = 0; posicion < data.length; posicion++){
-    // posicion: representa donde me encuentro dentro de array
-    // la usamos para poder acceder a cada elemento individual, lo imprimimos con console.log()
-    console.log(data[posicion])
+// Recorremos el array de datos
+for (let i = 0; i < data.length; i++) {
+    // Imprimimos cada elemento
+    console.log(data[i]);
 
-    // Verificamos si el año de lanzamiento es 2011
-    if (data[posicion].release_date === 2011){
-        songs2011.push(songs[posicion].song_title);
-        console.log("Released in 2011")
-        // Logica para aumentar el numero de canciones que duran 5 minutos
-        releasedSongsin2011 = releasedSongsin2011 + 1
+    // Verificamos directamente en el if si la fecha contiene "2011"
+    if (data[i].release_date.includes("2011")) {
+        // Añadimos el título de la canción al array correcto
+        releasedSongsin2011.push(data[i].song_title);
+        console.log("Released in 2011:", data[i].song_title);
     }
-
 }
 
-//Mostramos las canciones publicadas en 2011
-console.log("Songs released in 2011", releasedSongsin2011)
+// Mostramos las canciones publicadas en 2011
+console.log("Songs released in 2011:", releasedSongsin2011);
 
-
-
+// Mostramos el número total de canciones publicadas en 2011
+console.log("Total number of songs released in 2011:", releasedSongsin2011.length);

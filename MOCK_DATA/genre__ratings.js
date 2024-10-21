@@ -1,4 +1,4 @@
-const songs =[{"song_title":"Mr","artist_name":"Reinaldos Stoppe","genre":"Electronic","release_date":"11/3/2001","price":12.59,"rating":1,"album_title":"Ms","duration":2,"sales_count":42241,"featured":false},
+const data =[{"song_title":"Mr","artist_name":"Reinaldos Stoppe","genre":"Electronic","release_date":"11/3/2001","price":12.59,"rating":1,"album_title":"Ms","duration":2,"sales_count":42241,"featured":false},
     {"song_title":"Rev","artist_name":"Kelby Vasile","genre":"Jazz","release_date":"8/6/2005","price":16.11,"rating":5,"album_title":"Mrs","duration":5,"sales_count":61,"featured":false},
     {"song_title":"Ms","artist_name":"Caritta Darbey","genre":"Rock","release_date":"8/25/2002","price":3.57,"rating":4,"album_title":"Ms","duration":10,"sales_count":98839,"featured":false},
     {"song_title":"Rev","artist_name":"Terence Jurek","genre":"Jazz","release_date":"12/30/2019","price":14.98,"rating":2,"album_title":"Mrs","duration":4,"sales_count":11630,"featured":true},
@@ -997,11 +997,27 @@ const songs =[{"song_title":"Mr","artist_name":"Reinaldos Stoppe","genre":"Elect
     {"song_title":"Honorable","artist_name":"Bevan Whybray","genre":"Pop","release_date":"4/26/2011","price":18.58,"rating":1,"album_title":"Ms","duration":4,"sales_count":6656,"featured":true},
     {"song_title":"Mrs","artist_name":"Elston Birts","genre":"Jazz","release_date":"12/2/2007","price":18.02,"rating":3,"album_title":"Mrs","duration":4,"sales_count":53579,"featured":false},
     {"song_title":"Dr","artist_name":"Anita Nyssen","genre":"Rock","release_date":"9/7/2012","price":13.11,"rating":2,"album_title":"Mrs","duration":9,"sales_count":91494,"featured":true},
-    {"song_title":"Dr","artist_name":"Edvard Avramow","genre":"Rock","release_date":"11/1/2006","price":17.08,"rating":1,"album_title":"Rev","duration":5,"sales_count":64040,"featured":false}]
+    {"song_title":"Dr","artist_name":"Edvard Avramow","genre":"Rock","release_date":"11/1/2006","price":17.08,"rating":1,"album_title":"Rev","duration":5,"sales_count":64040,"featured":false}];
 
-const songsBetween2011And2018 = songs.filter(song => {
-    const year = parseInt(song.release_date.split("/")[2]);
-    return year >= 2011 && year <= 2018;
-}).map(song => song.song_title);
-console.log('Songs released between 2011 and 2018:', songsBetween2011And2018);
+
+
+    //4. SACAR EL RATING MEDIO DE UN GÉNERO (Rock)
+
+
+
+// Array vacío para almacenar los títulos de álbum únicos.
+let averageRockRating = [];
+let RockSongNum = 0;
+
+
+// Recorremos el array de datos
+for (let i = 0; i < data.length; i++) {
+    // Verificamos si el género de la canción actual es "Rock"
+    if (data[i].genre === "Rock") {
+        RockSongNum = RockSongNum +1
+        // Sumamos el rating actual y aumentamos el conteo
+    }
+}
+
+
 

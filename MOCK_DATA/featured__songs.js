@@ -997,29 +997,27 @@ const data =[{"song_title":"Mr","artist_name":"Reinaldos Stoppe","genre":"Electr
     {"song_title":"Honorable","artist_name":"Bevan Whybray","genre":"Pop","release_date":"4/26/2011","price":18.58,"rating":1,"album_title":"Ms","duration":4,"sales_count":6656,"featured":true},
     {"song_title":"Mrs","artist_name":"Elston Birts","genre":"Jazz","release_date":"12/2/2007","price":18.02,"rating":3,"album_title":"Mrs","duration":4,"sales_count":53579,"featured":false},
     {"song_title":"Dr","artist_name":"Anita Nyssen","genre":"Rock","release_date":"9/7/2012","price":13.11,"rating":2,"album_title":"Mrs","duration":9,"sales_count":91494,"featured":true},
-    {"song_title":"Dr","artist_name":"Edvard Avramow","genre":"Rock","release_date":"11/1/2006","price":17.08,"rating":1,"album_title":"Rev","duration":5,"sales_count":64040,"featured":false}];
+    {"song_title":"Dr","artist_name":"Edvard Avramow","genre":"Rock","release_date":"11/1/2006","price":17.08,"rating":1,"album_title":"Rev","duration":5,"sales_count":64040,"featured":false}]
 
 
-    // 3. SACAR CANCIONES PUBLICADAS EN 2011 o 2018 (release_date )
+    //5. SACAR LAS featuredSongs
 
-// Array vacío para almacenar las canciones publicadas en 2011 o 2018
-let releasedSongsin2011or2018 = [];
+
+// Array vacío para almacenar las featuredSongs
+
+let featuredSongs = [];
 
 // Recorremos el array de datos
 for (let i = 0; i < data.length; i++) {
-// Imprimimos cada elemento
-console.log(data[i]);
-
-    // Verificamos directamente en el if si la fecha contiene "2011" o "2018"
-    if (data[i].release_date.includes("2011") || data[i].release_date.includes("2018")) {
-        // Añadimos el título de la canción al array correcto
-        releasedSongsin2011or2018.push(data[i].song_title);
-        console.log("Released in 2011 or 2018:", data[i].song_title);
+    // Verificamos si la canción actual está marcada como "featured"
+    if (data[i].featured === true) {
+        // Añadimos la canción al array de canciones "featured"
+        featuredSongs.push(data[i]);
     }
 }
 
-// Mostramos las canciones publicadas en 2011 o 2018
-console.log("Songs released in 2011 or 2018:", releasedSongsin2011or2018);
+// Mostramos las canciones que están marcadas como "featured" en la consola
+console.log("Featured Songs:", featuredSongs);
 
-// Mostramos el número total de canciones publicadas en 2011 o 2018
-console.log("Total number of songs released in 2011 or 2018:", releasedSongsin2011or2018.length);
+// Mostramos el número total de canciones "featured"
+console.log("Total number of featured songs:", featuredSongs.length);
