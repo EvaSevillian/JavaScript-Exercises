@@ -1002,7 +1002,8 @@ const movies = [{"id":1,"first_name":"Freemon","last_name":"Daddow","email":"fda
 // 2. Peliculas que se estrenaron en 2014 y 2022
 
 const moviesBetween2014And2022 = movies.filter(movie => {
-    return movie.releaseDate === 2014 && 2022;
+    return movie.release_date.includes("2014") || movie.release_date.includes("2022")
+
   });
   
   console.log(moviesBetween2014And2022);
