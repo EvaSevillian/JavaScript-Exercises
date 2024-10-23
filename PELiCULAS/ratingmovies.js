@@ -1004,18 +1004,16 @@ const movies = [{"id":1,"first_name":"Freemon","last_name":"Daddow","email":"fda
 const ratingMovies = {1: [p1,p2,3], 2:[p4,5,6]} */
 
 const moviesByRating = (movies) => {
-    const ratingMovies = {};
-    
-    movies.forEach(movie => {
-      const rating = Math.floor(movie.rating); // Convertimos el rating a un entero para agrupar
-      if (!ratingMovies[rating]) {
-        ratingMovies[rating] = []; // Si no existe la clave, la creamos
-      }
-      ratingMovies[rating].push(movie.movie_title); // Añadimos la película al rating correspondiente
-    });
+  const ratingMovies = {};
+
+  movies.forEach(movie => {
+    const rating = Math.floor(movie.rating); // Convertimos el rating a un entero para agrupar
+    ratingMovies[rating] ||= []; // Asignamos un array vacío si no existe previamente
+    ratingMovies[rating].push(movie.movie_title); // Añadimos la película al rating correspondiente
+  });
+
+  return ratingMovies;
+};
   
-    return ratingMovies;
-  };
-  
-  const groupedMovies = moviesByRating(movies);
-  console.log(groupedMovies);
+const groupedMovies = moviesByRating(movies);
+console.log(groupedMovies);
