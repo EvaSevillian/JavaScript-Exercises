@@ -17,7 +17,7 @@ fetch(url).then((response) => {
         })
     }
     else {
-      alert("TODO MAL")
+      alert("SOMETHING VERY TERRIBLE IS ABOUT TO HAPPEN")
     }
 
 })
